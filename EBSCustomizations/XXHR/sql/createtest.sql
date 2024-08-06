@@ -7,4 +7,4 @@
 
 
 INSERT INTO employees (employee_id, first_name, last_name, email)
-VALUES (3, 'Johyyn', 'Dore', 'jothny.doe@example.com');
+VALUES (4, 'Johtyyn', 'Dore', 'jothny.doe@example.com');
