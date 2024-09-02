@@ -1,3 +1,2 @@
-SET DEFINE OFF;
-SELECT "Hello" & " world" AS concatenated_string
-FROM (VALUES (1)) AS t;
+SELECT 'Value with & symbol' AS example_text
+FROM DUAL;
