@@ -1,5 +1,3 @@
-
-
 -- Compile the package specification
 CREATE OR REPLACE PACKAGE my_package IS
     PROCEDURE my_procedure(p_param IN VARCHAR2);
