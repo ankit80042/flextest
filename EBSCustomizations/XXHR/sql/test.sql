@@ -1,3 +1,7 @@
+DEFINE 1 = 61167
+DEFINE 2 = 222
+DEFINE 3 = 222
+DEFINE 4 = 'Y'
 DECLARE
     -- Declare variables with new names (var1, var2, var3, var4)
     v1       NUMBER := &1;  -- Variable 1 (Responsibility ID)
