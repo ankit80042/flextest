@@ -1,8 +1,3 @@
-DEFINE var1 = 100
-DEFINE var2 = 200
-DEFINE var3 = 300
-DEFINE var4 = 'Y'
-
 DECLARE
     v1 NUMBER := &var1;
     v2 NUMBER := &var2;
