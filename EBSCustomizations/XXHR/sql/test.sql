@@ -1,5 +1,3 @@
-SET DEFINE OFF;
-
 DECLARE
     v1 NUMBER := &var1;
     v2 NUMBER := &var2;
