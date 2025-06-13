@@ -8,7 +8,7 @@ LDRCONFIG = "aflvmlu.lct 120.1.12020000.2"
 
 #RELEASE_NAME 12.2.9
 
-# -- Begin Entity Definitions -- 
+# -- Begin Entity Definitions -- vyvyuvyu
 
 DEFINE FND_LOOKUP_TYPE
   KEY   VIEW_APPSNAME                   VARCHAR2(50)
