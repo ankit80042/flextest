@@ -15,3 +15,4 @@ TRAILING NULLCOLS
   hire_date       DATE "YYYY-MM-DD",
   salary          DECIMAL EXTERNAL
 )
+-- njnuuun
