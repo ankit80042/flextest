@@ -1,20 +1,20 @@
--- Create a test table
+-- Create a table
 CREATE TABLE TestTable (
     ID INT IDENTITY(1,1),
     Name VARCHAR(50)
 );
 GO
 
--- Insert some sample rows
+-- Insert some sample data
 INSERT INTO TestTable (Name) VALUES ('Ankit');
 INSERT INTO TestTable (Name) VALUES ('Shukla');
 GO
 
--- Select all rows
+-- Select all data
 SELECT * FROM TestTable;
 GO
 
--- Update one of the rows
+-- Update a record
 UPDATE TestTable
 SET Name = 'Ankit Updated'
 WHERE Name = 'Ankit';
@@ -24,6 +24,6 @@ GO
 SELECT * FROM TestTable;
 GO
 
--- Clean up the test table
+-- Drop the table
 DROP TABLE TestTable;
 GO
