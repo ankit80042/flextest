@@ -1,24 +1,29 @@
--- Drop the table if it already exists
-IF OBJECT_ID('tempdb..#TestGo') IS NOT NULL
-    DROP TABLE #TestGo;
-GO
-
--- Create the temp table
-CREATE TABLE #TestGo (
+-- Create a test table
+CREATE TABLE TestTable (
     ID INT IDENTITY(1,1),
     Name VARCHAR(50)
 );
 GO
 
--- Insert sample data
-INSERT INTO #TestGo (Name) VALUES ('Ankit');
-INSERT INTO #TestGo (Name) VALUES ('Shukla');
+-- Insert some sample rows
+INSERT INTO TestTable (Name) VALUES ('Ankit');
+INSERT INTO TestTable (Name) VALUES ('Shukla');
 GO
 
--- Select data to confirm inserts
-SELECT * FROM #TestGo;
+-- Select all rows
+SELECT * FROM TestTable;
 GO
 
--- Drop the table to clean up
-DROP TABLE #TestGo;
+-- Update one of the rows
+UPDATE TestTable
+SET Name = 'Ankit Updated'
+WHERE Name = 'Ankit';
+GO
+
+-- Verify the update
+SELECT * FROM TestTable;
+GO
+
+-- Clean up the test table
+DROP TABLE TestTable;
 GO
