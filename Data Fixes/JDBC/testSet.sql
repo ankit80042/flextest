@@ -1,29 +1,29 @@
--- Create a table
-CREATE TABLE TestTable (
-    ID INT IDENTITY(1,1),
-    Name VARCHAR(50)
-)
+-- Batch 1: Switch context to a desired database (e.g., master or your existing database)
+USE master;
 GO
 
--- Insert some sample data
-INSERT INTO TestTable (Name) VALUES ('Ankit');
-INSERT INTO TestTable (Name) VALUES ('Shukla');
+-- Batch 2: Create a simple Sample Table (Employees)
+-- This table has only two columns for maximum simplicity.
+IF OBJECT_ID('dbo.SimpleEmployees', 'U') IS NOT NULL 
+    DROP TABLE dbo.SimpleEmployees;
 GO
 
--- Select all data
-SELECT * FROM TestTable;
+CREATE TABLE dbo.SimpleEmployees (
+    EmployeeID INT PRIMARY KEY IDENTITY(1,1),
+    EmployeeName NVARCHAR(100) NOT NULL
+);
 GO
 
--- Update a record
-UPDATE TestTable
-SET Name = 'Ankit Updated'
-WHERE Name = 'Ankit';
+-- Batch 3: Insert Data into the SimpleEmployees Table
+INSERT INTO dbo.SimpleEmployees (EmployeeName) VALUES 
+('Alice'),
+('Bob');
 GO
 
--- Verify the update
-SELECT * FROM TestTable;
-GO
-
--- Drop the table
-DROP TABLE TestTable;
+-- Batch 4: Retrieve and display all data from the table
+SELECT 
+    EmployeeID, 
+    EmployeeName
+FROM 
+    dbo.SimpleEmployees;
 GO
