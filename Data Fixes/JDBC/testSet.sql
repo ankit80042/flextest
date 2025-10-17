@@ -2,7 +2,7 @@
 CREATE TABLE TestTable (
     ID INT IDENTITY(1,1),
     Name VARCHAR(50)
-);
+)
 GO
 
 -- Insert some sample data
