@@ -1,0 +1,60 @@
+DECLARE
+  l_exe_exist NUMBER;
+  l_prg_exist NUMBER;
+BEGIN
+  -- Check if executable already exists
+  SELECT COUNT(*)
+  INTO l_exe_exist
+  FROM FND_EXECUTABLES
+  WHERE EXECUTABLE_NAME = 'XXHR_EMP_SYNC'
+  AND APPLICATION_ID = (SELECT APPLICATION_ID FROM FND_APPLICATION WHERE APPLICATION_SHORT_NAME = 'XXHR');
+
+  IF l_exe_exist = 0 THEN
+    -- Register Concurrent Program Executable
+    fnd_program.executable(
+      executable_name   => 'XXHR_EMP_SYNC',
+      application       => 'XXHR',
+      executable_short_name => 'XXHR_EMP_SYNC',
+      subroutine_name   => NULL,
+      execution_method  => 'SQL'
+    );
+  END IF;
+
+  -- Check if concurrent program already exists
+  SELECT COUNT(*)
+  INTO l_prg_exist
+  FROM FND_CONCURRENT_PROGRAMS
+  WHERE CONCURRENT_PROGRAM_NAME = 'XXHR_EMP_SYNC'
+  AND APPLICATION_ID = (SELECT APPLICATION_ID FROM FND_APPLICATION WHERE APPLICATION_SHORT_NAME = 'XXHR');
+
+  IF l_prg_exist = 0 THEN
+    -- Register Concurrent Program
+    fnd_program.register(
+      program_name        => 'XXHR_EMP_SYNC',
+      application         => 'XXHR',
+      executable_name     => 'XXHR_EMP_SYNC',
+      description         => 'Employee Data Synchronization',
+      language_code       => 'US',
+      enabled             => 'Y',
+      run_alone           => 'N',
+      printer_name        => NULL,
+      output_file_type    => 'TEXT'
+    );
+  END IF;
+
+  -- Create a sample parameter if it does not exist
+  BEGIN
+    fnd_program.register_parameter(
+      program_name        => 'XXHR_EMP_SYNC',
+      application         => 'XXHR',
+      parameter_sequence  => 10,
+      parameter_name      => 'P_EFFECTIVE_DATE',
+      value_set_name      => 'FND_STANDARD_DATE'
+    );
+  EXCEPTION
+    WHEN OTHERS THEN
+      NULL; -- Ignore if parameter exists
+  END;
+
+END;
+/
