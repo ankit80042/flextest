@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - 'feature/**'
-      - main
+      - master
 jobs:
   trigger-flexdeploy:
     runs-on: ubuntu-latest
