@@ -1,0 +1,45 @@
+name: FlexDeploy Deployment Trigger
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - main
+jobs:
+  trigger-flexdeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Get changed files
+        id: changed_files
+        run: |
+          CHANGED=$(git diff --name-only HEAD~1 HEAD)
+          echo "Changed files: $CHANGED"
+          FILES_JSON=$(echo "$CHANGED" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          echo "files_json=$FILES_JSON" >> $GITHUB_OUTPUT
+      - name: Get package name
+        id: package_info
+        run: |
+          PACKAGE=$(git diff --name-only HEAD~1 HEAD | head -1 | cut -d'/' -f1)
+          echo "package_name=$PACKAGE" >> $GITHUB_OUTPUT
+          echo "Package name: $PACKAGE"
+      - name: Trigger FlexDeploy webhook
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.FLEXDEPLOY_WEBHOOK_TOKEN }}" \
+            --fail \
+            --silent \
+            --show-error \
+            -d "{
+              \"projectName\": \"BenXXHR\",
+              \"releaseName\": \"REL_${{ github.ref_name }}_${{ github.run_number }}\",
+              \"branchName\": \"${{ github.ref_name }}\",
+              \"packageName\": \"${{ steps.package_info.outputs.package_name }}\",
+              \"ticketNumber\": \"\",
+              \"packageFiles\": ${{ steps.changed_files.outputs.files_json }},
+              \"deployEnvs\": [\"qa\"]
+            }" \
+            "${{ secrets.FLEXDEPLOY_WEBHOOK_URL }}"
