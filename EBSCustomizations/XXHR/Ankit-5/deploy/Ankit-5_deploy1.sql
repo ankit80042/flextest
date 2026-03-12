@@ -3,7 +3,7 @@
 -- Package: Ankit-5_Deploy
 -- Group:   Implementation pkgs
 -- =====================================================
-
+;;;;
 -- Step 1: Create the employees table
 CREATE TABLE BEN5_EMPLOYEES (
     EMP_ID       NUMBER(10)    PRIMARY KEY,
@@ -40,3 +40,5 @@ COMMIT;
 
 -- Verify
 SELECT COUNT(*) AS TOTAL_RECORDS FROM BEN5_EMPLOYEES;
+
+INVALID SQL;
