@@ -41,4 +41,8 @@ COMMIT;
 -- Verify
 SELECT COUNT(*) AS TOTAL_RECORDS FROM BEN5_EMPLOYEES;
 
-INVALID SQL;
+BEGIN
+   -- Forces an unhandled exception
+   RAISE_APPLICATION_ERROR(-20001, 'MANUAL STOP: Script failed validation.');
+END;
+/
