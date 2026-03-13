@@ -23,3 +23,5 @@ END;
 
 -- This will never be reached, and the deployment will turn RED
 COMMIT;
+
+return -1;
