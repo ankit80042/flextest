@@ -12,7 +12,7 @@ CREATE TABLE BEN5_EMPLOYEES (
 );
 
 -- Step 2: Insert 
-INSERT INTO BEN5_EMPLOYEES (EMP_ID, EMP_NAME) VALUES (1, 'John Smith');
+INSERT INTO BEN5_EMPLOYEES (EMP_ID, EMP_NAME) VALUES (1, 'John Smith', 'uyfyufuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuyyyyyyyyyyyyy' ufufuyfyufyuuuuuuuuuuuuuuuuuuuuu);
 
 -- Step 3: THE FORCED ERROR
 -- This invalid block will trigger the "EXIT 1" above
