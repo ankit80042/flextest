@@ -5,17 +5,17 @@
 -- =====================================================
 
 -- Step 1: Remove index first (depends on table)
-DROP INDEX BEN2_EMP_DEPT_IDX;
+DROP INDEX BEN12_EMP_DEPT_IDX;
 
 -- Step 2: Remove the sequence
-DROP SEQUENCE BEN2_EMP_SEQ;
+DROP SEQUENCE BEN12_EMP_SEQ;
 
 -- Step 3: Remove the table and all its data
-DROP TABLE BEN2_EMPLOYEES CASCADE CONSTRAINTS;
+DROP TABLE BEN12_EMPLOYEES CASCADE CONSTRAINTS;
 
 -- Step 4: Commit
 COMMIT;
 
 -- Verify rollback was successful
-SELECT COUNT(*) FROM USER_TABLES WHERE TABLE_NAME = 'BEN2_EMPLOYEES';
+SELECT COUNT(*) FROM USER_TABLES WHERE TABLE_NAME = 'BEN12_EMPLOYEES';
 -- Should return 0 if rollback was successful
