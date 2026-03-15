@@ -13,14 +13,14 @@ CREATE TABLE Ben20_EMPLOYEES (
     SALARY       NUMBER(10,2),
     CREATED_DATE DATE DEFAULT SYSDATE,
     STATUS       VARCHAR2(20) DEFAULT 'ACTIVE'
-);
+);;;;;;;;;;;;;;;;;;;;;
 
 -- Step 2: Create sequence for EMP_ID
 CREATE SEQUENCE Ben20_EMP_SEQ
     START WITH 1
     INCREMENT BY 1
     NOCACHE
-    NOCYCLE;
+    NOCYCLE;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 -- Step 3: Insert sample data
 INSERT INTO Ben20_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
