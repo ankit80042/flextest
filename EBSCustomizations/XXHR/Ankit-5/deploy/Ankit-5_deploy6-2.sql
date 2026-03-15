@@ -33,7 +33,7 @@ INSERT INTO Ben8_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
 VALUES (Ben8_EMP_SEQ.NEXTVAL, 'Bob Johnson', 'bob.johnson@company.com', 'Finance', 80000);
 
 -- Step 4: Create index for better performance
-CREATE INDEX Ben8_EMP_DEPT_IDX ON BEN5_EMPLOYEES(DEPARTMENT);
+CREATE INDEX Ben8_EMP_DEPT_IDX ON BEN8_EMPLOYEES(DEPARTMENT);
 
 -- Step 5: Commit changes
 COMMIT;
