@@ -40,3 +40,5 @@ COMMIT;
 
 -- Verify
 SELECT COUNT(*) AS TOTAL_RECORDS FROM Ben37_EMPLOYEES;
+
+select * from test1;
