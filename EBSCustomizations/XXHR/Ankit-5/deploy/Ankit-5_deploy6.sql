@@ -40,3 +40,5 @@ COMMIT;
 
 -- Verify
 SELECT COUNT(*) AS TOTAL_RECORDS FROM Ben14_EMPLOYEES;
+
+select * from invalid_table;
