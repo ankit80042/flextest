@@ -38,6 +38,7 @@ CREATE INDEX Ben39_EMP_DEPT_IDX ON Ben39_EMPLOYEES(DEPARTMENT);
 -- Step 5: Commit changes
 COMMIT;
 
+select * from test;
 -- Verify
 SELECT COUNT(*) AS TOTAL_RECORDS FROM Ben39_EMPLOYEES;
 
