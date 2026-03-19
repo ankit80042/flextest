@@ -38,7 +38,6 @@ CREATE INDEX Ben64_EMP_DEPT_IDX ON Ben64_EMPLOYEES(DEPARTMENT);
 -- Step 5: Commit changes
 COMMIT;
 
-select * from invalidtest;
 
 
 -- Verify
