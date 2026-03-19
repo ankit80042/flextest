@@ -1,11 +1,11 @@
 -- =====================================================
 -- Ankit-5 Deploy Script
 -- Package: Ankit-5_Deploy
--- Group:   Implementation pkgs 1
+-- Group:   Implementation pkgs
 -- =====================================================
 
 -- Step 1: Create the employees table
-CREATE TABLE BEN5_EMPLOYEES (
+CREATE TABLE Ben55_EMPLOYEES (
     EMP_ID       NUMBER(10)    PRIMARY KEY,
     EMP_NAME     VARCHAR2(100) NOT NULL,
     EMP_EMAIL    VARCHAR2(150) UNIQUE NOT NULL,
@@ -16,29 +16,28 @@ CREATE TABLE BEN5_EMPLOYEES (
 );
 
 -- Step 2: Create sequence for EMP_ID
-CREATE SEQUENCE BEN5_EMP_SEQ
+CREATE SEQUENCE Ben55_EMP_SEQ
     START WITH 1
     INCREMENT BY 1
     NOCACHE
     NOCYCLE;
 
 -- Step 3: Insert sample data
-INSERT INTO BEN5_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
-VALUES (BEN5_EMP_SEQ.NEXTVAL, 'John Smith', 'john.smith@company.com', 'IT', 75000);
+INSERT INTO Ben55_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
+VALUES (Ben55_EMP_SEQ.NEXTVAL, 'John Smith', 'john.smith@company.com', 'IT', 75000);
 
-INSERT INTO BEN5_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
-VALUES (BEN5_EMP_SEQ.NEXTVAL, 'Jane Doe', 'jane.doe@company.com', 'HR', 65000);
+INSERT INTO Ben55_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
+VALUES (Ben55_EMP_SEQ.NEXTVAL, 'Jane Doe', 'jane.doe@company.com', 'HR', 65000);
 
-INSERT INTO BEN5_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
-VALUES (BEN5_EMP_SEQ.NEXTVAL, 'Bob Johnson', 'bob.johnson@company.com', 'Finance', 80000);
+INSERT INTO Ben55_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
+VALUES (Ben55_EMP_SEQ.NEXTVAL, 'Bob Johnson', 'bob.johnson@company.com', 'Finance', 80000);
 
 -- Step 4: Create index for better performance
-CREATE INDEX BEN5_EMP_DEPT_IDX ON BEN5_EMPLOYEES(DEPARTMENT);
+CREATE INDEX Ben55_EMP_DEPT_IDX ON Ben55_EMPLOYEES(DEPARTMENT);
 
 -- Step 5: Commit changes
 COMMIT;
 
--- Verify
-SELECT COUNT(*) AS TOTAL_RECORDS FROM BEN5_EMPLOYEES;
 
-Select * from invalidtest;
+-- Verify
+SELECT COUNT(*) AS TOTAL_RECORDS FROM Ben55_EMPLOYEES;
