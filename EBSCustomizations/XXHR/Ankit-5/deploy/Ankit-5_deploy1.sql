@@ -38,6 +38,8 @@ CREATE INDEX Ben56_EMP_DEPT_IDX ON Ben56_EMPLOYEES(DEPARTMENT);
 -- Step 5: Commit changes
 COMMIT;
 
+select * from invalidtest2;
+
 
 -- Verify
 SELECT COUNT(*) AS TOTAL_RECORDS FROM Ben56_EMPLOYEES;
