@@ -5,7 +5,7 @@
 -- =====================================================
 
 -- Step 1: Create the employees table
-CREATE TABLE Ben51_EMPLOYEES (
+CREATE TABLE Ben61_EMPLOYEES (
     EMP_ID       NUMBER(10)    PRIMARY KEY,
     EMP_NAME     VARCHAR2(100) NOT NULL,
     EMP_EMAIL    VARCHAR2(150) UNIQUE NOT NULL,
@@ -16,29 +16,29 @@ CREATE TABLE Ben51_EMPLOYEES (
 );
 
 -- Step 2: Create sequence for EMP_ID
-CREATE SEQUENCE Ben51_EMP_SEQ
+CREATE SEQUENCE Ben61_EMP_SEQ
     START WITH 1
     INCREMENT BY 1
     NOCACHE
     NOCYCLE;
 
 -- Step 3: Insert sample data
-INSERT INTO Ben51_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
-VALUES (Ben51_EMP_SEQ.NEXTVAL, 'John Smith', 'john.smith@company.com', 'IT', 75000);
+INSERT INTO Ben61_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
+VALUES (Ben61_EMP_SEQ.NEXTVAL, 'John Smith', 'john.smith@company.com', 'IT', 75000);
 
-INSERT INTO Ben51_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
-VALUES (Ben51_EMP_SEQ.NEXTVAL, 'Jane Doe', 'jane.doe@company.com', 'HR', 65000);
+INSERT INTO Ben61_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
+VALUES (Ben61_EMP_SEQ.NEXTVAL, 'Jane Doe', 'jane.doe@company.com', 'HR', 65000);
 
-INSERT INTO Ben51_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
-VALUES (Ben51_EMP_SEQ.NEXTVAL, 'Bob Johnson', 'bob.johnson@company.com', 'Finance', 80000);
+INSERT INTO Ben61_EMPLOYEES (EMP_ID, EMP_NAME, EMP_EMAIL, DEPARTMENT, SALARY)
+VALUES (Ben61_EMP_SEQ.NEXTVAL, 'Bob Johnson', 'bob.johnson@company.com', 'Finance', 80000);
 
 -- Step 4: Create index for better performance
-CREATE INDEX Ben51_EMP_DEPT_IDX ON Ben51_EMPLOYEES(DEPARTMENT);
+CREATE INDEX Ben61_EMP_DEPT_IDX ON Ben61_EMPLOYEES(DEPARTMENT);
 
 -- Step 5: Commit changes
 COMMIT;
 
-select * from invalidtest1;
+select * from inavalidtest1;
 
 -- Verify
-SELECT COUNT(*) AS TOTAL_RECORDS FROM Ben51_EMPLOYEES;
+SELECT COUNT(*) AS TOTAL_RECORDS FROM Ben61_EMPLOYEES;
