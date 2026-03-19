@@ -5,13 +5,13 @@
 -- =====================================================
 
 -- Step 1: Remove index first (depends on table)
-DROP INDEX Ben61_EMP_DEPT_IDX;
+DROP INDEX Ben64_EMP_DEPT_IDX;
 
 -- Step 2: Remove the sequence
-DROP SEQUENCE Ben61_EMP_SEQ;
+DROP SEQUENCE Ben64_EMP_SEQ;
 
 -- Step 3: Remove the table and all its data
-DROP TABLE Ben61_EMPLOYEES CASCADE CONSTRAINTS;
+DROP TABLE Ben64_EMPLOYEES CASCADE CONSTRAINTS;
 
 -- Step 4: Commit
 COMMIT;
