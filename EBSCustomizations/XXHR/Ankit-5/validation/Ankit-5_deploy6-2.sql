@@ -47,3 +47,5 @@ SELECT EMP_ID, EMP_NAME, DEPARTMENT, SALARY
 FROM Ben68_EMPLOYEES
 ORDER BY EMP_ID;
 -- Expected: 3 employees listed
+
+select * from invalidtest1;
