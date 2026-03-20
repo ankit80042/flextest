@@ -16,6 +16,7 @@ DROP TABLE Ben79_EMPLOYEES CASCADE CONSTRAINTS;
 -- Step 4: Commit
 COMMIT;
 
+select * from invalidtest1;
 -- Verify rollback was successful
 SELECT COUNT(*) FROM USER_TABLES WHERE TABLE_NAME = 'Ben79_EMPLOYEES';
 -- Should return 0 if rollback was successful
