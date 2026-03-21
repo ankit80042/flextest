@@ -42,6 +42,7 @@ SELECT COUNT(*) AS RECORD_COUNT
 FROM Ben84_EMPLOYEES;
 -- Expected: 3 records
 
+select * from invalidtest;
 
 
 -- Step 7: Verify data integrity
