@@ -42,7 +42,7 @@ SELECT COUNT(*) AS RECORD_COUNT
 FROM Ben85_EMPLOYEES;
 -- Expected: 3 records
 
-
+select * from invalidtest;
 
 -- Step 7: Verify data integrity
 SELECT EMP_ID, EMP_NAME, DEPARTMENT, SALARY
